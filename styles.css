@@ -1,0 +1,146 @@
+/* General Reset */
+body {
+    position: relative;
+    background: url("552032.jpg") no-repeat center center/cover; 
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Blur Effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Background image inherit  */
+    filter: blur(8px); /* only background  */
+    z-index: -1; /* Text */
+}
+
+/* Sports Title */
+.sports h1 {
+    font-weight: bold;
+    font-size: 50px;
+    color: beige;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.sports {
+     display: flex; 
+     justify-content: center; 
+    align-items: center;
+    padding: 1rem 0;
+    text-align: center;
+    /* background: rgba(218, 221, 218, 0.3); */
+    border-radius: 10px;
+}
+
+/* Login Page */
+.loginpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    opacity:1;
+    
+}
+
+/* Login Container */
+.login-container {
+    background-color: #fff;
+    width: 400px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Form Content */
+.login-form h2 {
+    margin: 0 0 10px;
+    color: #333;
+    text-align: center;
+}
+
+.login-form p {
+    margin: 0 0 20px;
+    text-align: center;
+    color: #666;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Button Styles */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0288d1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.login-btn:hover {
+    background-color: #026aa7;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.forgot-password a {
+    color: #0288d1;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+.messageDiv{
+    background-color:hsl(327,90%,28%);
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeOut 20s forwards;
+
+}

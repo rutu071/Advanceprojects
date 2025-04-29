@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Buttons</title>
+     <!-- <link rel="stylesheet" href="styles.css">  -->
+     <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 1.5rem;
+}
+
+main {
+    margin: 2rem auto;
+}
+
+#sports-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.sports-btn {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sports-btn:hover {
+    transform: scale(1.1); /* Slightly enlarges the button */
+    background-color: #303f9f; /* Darkens the button color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+
+footer {
+    background-color: #3f51b5;
+    color: white;
+    padding: 1rem;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 1.5rem;
+}
+
+.action-btn {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+    background-color: #303f9f;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+#sports-form {
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, select, textarea, button {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #303f9f;
+}
+header {
+    position: relative;
+    background-color: #3f51b5;
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-btn {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #d32f2f; /* Red color for Logout button */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #b71c1c;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+
+     </style>
+     <script type="module" src="./user.js"></script>
+</head>
+<body>
+    <header>
+        <button class="logout-btn" id="logout">Logout</button>
+        <h1>Sports Options</h1>
+        
+    </header>
+    <main>
+        <!-- Buttons Section -->
+        <section id="sports-buttons">
+            <button class="sports-btn" id="all-sports">All Sports</button>
+            <button class="sports-btn" id="add-sports">Add Sports</button>
+            <button class="sports-btn" id="my-sport">My Sport</button>
+        </section>
+        
+   <!-- Form Section -->
+        <section id="sports-form" class="hidden">
+            <h2>Add Sports</h2>
+            <form id="userForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="city">City:</label>
+                <input type="text" id="city" required>
+
+                <label for="area">Area:</label>
+                <input type="text" id="area" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <label for="sport-type">Sport Type:</label>
+                <input type="text" id="sportsType" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <button type="button" class="submit-btn" id="submitButton">Submit</button>
+                <button type="reset" class="submit-btn" id="deleteButton">Delete</button>
+            </form>
+        </section>
+        <div id="summary"></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sports Management</p>
+    </footer>
+
+    <script>
+        document.getElementById('add-sports').addEventListener('click', function() {
+            const formSection = document.getElementById('sports-form');
+            formSection.classList.toggle('hidden');
+        });
+
+        let user = {}; // Object to store user data
+
+        // Event listener for the submit button
+        document.getElementById("submitButton").addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the form's default submission behavior
+            
+            // Getting input values and storing them in the user object
+            user = {
+                name: document.getElementById("name").value,
+                city: document.getElementById("city").value,
+                area: document.getElementById("area").value,
+                description: document.getElementById("description").value,
+                sportsType: document.getElementById("sportsType").value,
+                time: document.getElementById("time").value
+            };
+
+            alert("User information submitted successfully!");
+        });
+
+        // Event listener for the sports button
+        document.getElementById("my-sport").addEventListener("click", () => {
+            if (Object.keys(user).length === 0) {
+                alert("Please submit the user information first!");
+                return;
+            }
+            
+            // Generating and displaying the summary based on the submitted data
+            const summary = `
+                Name: ${user.name}<br>
+                City: ${user.city}<br>
+                Area: ${user.area}<br>
+                Description: ${user.description}<br>
+                Sports Type: ${user.sportsType}<br>
+                Preferred Time: ${user.time}
+            `;
+            document.getElementById("summary").innerHTML = summary;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script type="module" src="login.js" defer></script>
+    <style>
+        body {
+            background: url("552032.jpg") no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+     body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Background image inherit करतो */
+    filter: blur(8px); /* फक्त background ब्लर होईल */
+    z-index: -1; /* Text आणि इतर घटकांवर परिणाम होणार नाही */
+}
+
+
+        .registration-container {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .registration-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        
+        .registration-container input[type="email"],
+        .registration-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .registration-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+
+        }
+       
+        .registration-container button:hover {
+            background-color: #45a049;
+        }
+
+        .registration-container p {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+   
+    <div class="registration-container" >
+        <h2>Login</h2>
+        <form>
+            <div id="signInMessage"class="messageDiv" style="display:none;"></div>
+            <!-- <input type="text" name="username" placeholder="Username" required> -->
+            <input type="email" name="email" id="email"placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <button type="submit"class="btn" id="submitsignIn">login</button> 
+        </form>
+        <p>Don't have an account?<a href="sports.html">Register</a></p>
+    </div>
+</body>
+</html>

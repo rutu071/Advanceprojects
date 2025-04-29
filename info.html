@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Buddy</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 1.5rem;
+}
+
+main {
+    margin: 2rem auto;
+}
+
+#sports-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.sports-btn {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sports-btn:hover {
+    transform: scale(1.1); /* Slightly enlarges the button */
+    background-color: #303f9f; /* Darkens the button color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+
+footer {
+    background-color: #3f51b5;
+    color: white;
+    padding: 1rem;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 1.5rem;
+}
+
+.action-btn {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+    background-color: #303f9f;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+#sports-form {
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, select, textarea, button {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #303f9f;
+}
+.logout-btn {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #d32f2f; /* Red color for Logout button */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #b71c1c;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+header {
+    position: relative;
+    background-color: #3f51b5;
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+     </style>
+      <script type="module" src="./infologout.js"></script>
+</head>
+<body>
+    <header>
+        <button class="logout-btn" id="logout">Logout</button>
+        <h1>Sports Buddy</h1>
+    
+    </header>
+    <main>
+        <!-- Buttons Section -->
+        <section id="sports-buttons">
+            <button class="sports-btn" id="add-sports">Add/update Category</button>
+            <button class="sports-btn" id="add-city">Add/update city </button>
+            <button class="sports-btn" id="add-area"> update area</button>
+        </section>
+
+
+         <!-- Form Section -->
+         <section id="city-form" class="hidden">
+            <h2>Add City</h2>
+            <form>
+              
+                <label for="city">City:</label>
+                <select id="city" name="city" required>
+                    <option value="pune">Pune</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="banglore">banglore</option>
+                    <option value="chennai">chennai</option>
+                </select>
+            </section>
+                </form>
+
+                <form>
+                <section id="area-form" class="hidden"></section>
+                <h2>Add area</h2>
+                <label for="area">Area:</label>
+                <select id="area" name="area" required>
+                    <option value="kothrud">Kothrud</option>
+                    <option value="hadapsar">Hadapsar</option>
+                    <option value="baner">Baner</option>
+                    <option value="panvel">Panvel</option>
+                </select>
+            </section>
+                </form>
+
+                <form>
+                <section id="sports-form" class="hidden">
+                <label for="sport-type">Sport Type:</label>
+                <select id="sport-type" name="sport-type" required>
+                    <option value="football">Football</option>
+                    <option value="cricket">Cricket</option>
+                    <option value="tennis">Tennis</option>
+                    <option value="cyling">Cyling</option>
+                    <option value="vollyball">vollyball</option>
+                    <option value="basketball">basketball</option>
+                </select>
+                </section>
+            </form>
+
+              
+                <!-- <label for="category"> Select Gender:</label> 
+                 <select id="category-select" name="gender" required> 
+                <option value="Male">Male</option>
+                <option value="female">Female</option>-->
+
+             <button type="submit" class="submit-btn">Submit</button>
+            <button type="reset"   class="submit-btn">Update</button>
+            
+        </section>
+
+
+    </main>
+    <footer>
+        <p>&copy; 2025 Sports Management</p>
+    </footer>
+    <script>
+        document.getElementById('add-sports').addEventListener('click', function() {
+            const formSection = document.getElementById('sports-form');
+            formSection.classList.toggle('hidden');
+        });
+        document.getElementById('add-city').addEventListener('click', function() {
+            const formSection = document.getElementById('city-form');
+            formSection.classList.toggle('hidden');
+        });
+        document.getElementById('add-area').addEventListener('click', function() {
+            const formSection = document.getElementById('area-form');
+            formSection.classList.toggle('hidden');
+        });
+         
+         
+    </script>
+</body>
+</html>

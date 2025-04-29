@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Tracking System</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+    /*  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+input, select, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+input, select, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+input:focus, select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bus Tracking System</h1>
+
+        <!-- User Registration -->
+        <div id="user-registration">
+            <h2>Register</h2>
+            <input type="text" id="userName" placeholder="Enter your name" />
+            <input type="text" id="userContact" placeholder="Enter your contact details" />
+            <button onclick="registerUser()">Register</button>
+        </div>
+
+        <!-- Bus Options -->
+        <div id="bus-options" style="display:none;">
+            <h2>Choose a Bus</h2>
+            <select id="busSelect">
+                <option value="1">City Bus</option>
+                <option value="2">Tourist Bus</option>
+                <option value="3">Intercity Bus</option>
+            </select>
+            <button onclick="chooseBus()">Select Bus</button>
+        </div>
+
+        <!-- Bus Information -->
+        <div id="bus-info" style="display:none;">
+            <h2>Bus Details</h2>
+            <p id="busLocation"></p>
+            <p id="busTiming"></p>
+        </div>
+    </div>
+
+    <script src="scriptbus.js"></script>
+</body>
+</html>
